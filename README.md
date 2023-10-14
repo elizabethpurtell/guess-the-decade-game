@@ -2,7 +2,11 @@
 
 ## The name of the project
 
+The Guess the Decade Game
+
 ### Names of the team members
+
+Elizabeth Purtell
 
 ### A description of the project
 
@@ -12,9 +16,23 @@
 
 ### A list of any libraries, frameworks, or packages that your application requires in order to properly function. If needed, provide instructions that the user may need to follow in order to get your application up and running on their own computer.
 
+### User Stories
+
+![User Stories Diagram](img/userStories.diagram.png)
+
 ### Wireframe Images
 
+![Game Page first screen wireframe](img/gamePage-wireframe1.png)
+
+![Game Page end screen wireframe](img/gamePage-end-wireframe.png)
+
+![Home Page wireframe](img/homePage-wireframe.png)
+
+![About Me Page wireframe](img/aboutMePage-wireframe.png)
+
 ### Lighthouse Images
+
+![title of image](link to image)
 
 ### Reference Links
 
@@ -24,11 +42,7 @@
 
 ### Domain Modeling
 
-Draw out the entities for your project and how they are related to each other. Determine the relationships between the functions/methods and entities of your app.
-
-Include in your domain model the names and data types of your entities and their properties.
+![Domain Model Diagram](img/guessTheDecade-domainModel.png)
 
 ---
 ---
-
-Within your code, document with meaningful comments. For example, a comment might provide an overview of what the function beneath it is doing, or describe the relationship between two variables.
