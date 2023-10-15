@@ -1,8 +1,6 @@
 'use strict';
 
 
-'use strict';
-
 // *** Global Variables ***
 
 let currentQuestion = 0;
