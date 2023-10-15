@@ -6,35 +6,54 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home Page Guess the Decade Game</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/home.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500&display=swap" rel="stylesheet">
   <link
-  href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;0,700;0,900;1,100;1,500&display=swap"
-  rel="stylesheet">
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;0,700;0,900;1,100;1,500&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
-<header>
-  <nav class="topNav">
-    <ul>
-      <li><a class="active" href="index.html">HOME</a></li>
-      <li><a href="pages/about-me.html">ABOUT ME</a></li>
-      <li><a href="pages/game.html">PLAY GAME</a></li>
-    </ul>
-  </nav>
+  <header>
+    <nav class="topNav">
+      <ul>
+        <li><a class="active" href="index.html">HOME</a></li>
+        <li><a href="pages/about-me.html">ABOUT ME</a></li>
+        <li><a href="pages/game.html">PLAY GAME</a></li>
+      </ul>
+    </nav>
 
-</header>
+  </header>
   <main>
-<section></section>
+    <section>
+      <h1>Player Scores</h1>
+      <table>
+        <thead>
+            <tr>
+                <th>Player Name</th>
+                <th>Score</th>
+                <th>Rank</th>
+            </tr>
+        </thead>
+        <tbody id="scoreTableBody">
+        </tbody>
+    </table>
+    </section>
   </main>
   <footer>
     <h5>&#169; Elizabeth Purtell All Rights Reserved 2023</h5>
   </footer>
-  <script src="js/game.js"></script>
-  <script src="js/home.js"></script>
+
 
 </body>
+
+<script src="js/game.js"></script>
+<script src="js/home.js"></script>
+<!-- <script src="js/game.js"></script> -->
+
+
 </html>
