@@ -1,5 +1,9 @@
 'use strict';
 
+
+// this save.js file is for all my extra js code that I have been testing with and trying out. some has been used, some is in progress
+
+
 // *** Global Variables ***
 
 let currentQuestion = 0;
