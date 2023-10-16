@@ -81,8 +81,6 @@ function startGame() {
     alert('Enter name to play game');
   } else {
     playerNameElement.disabled = true;
-    startScreen.classList.add('hidden');
-    quizScreen.classList.add('visible');
     nextQuestion();
   }
 }
@@ -90,11 +88,10 @@ function startGame() {
 
 function nextQuestion() {
   if (currentQuestion < questions.length - 1) {
-    resultElement.class.add('hidden');
     currentQuestion++;
     questionElement.textContent = questions[currentQuestion].question;
     for (let i = 1; i <= 3; i++) {
-      answerElements[i].classList.add('visible');
+    
     }
   } else {
     showScore();
@@ -133,8 +130,6 @@ function showScore() {
   questionElement.textContent = 'Game Over, ' + playerName + '!';
   const playerScore = score;
   const rank = assignRank(playerScore);
-  startScreen.classList.remove('hidden');
-  quizScreen.classList.add('hidden');
 
   const playerData = {
     name: playerName,
@@ -150,7 +145,7 @@ function showScore() {
     `<h1>Game Over, ${playerName}!</h1>
     <p>Your Score: ${playerScore} / ${questions.length}</p>
     <p>Your Rank: ${rank}</p>
-    <a href="index.html" target="_blank">View Scoreboard</a>`
+    <a href="../index.html" target="_blank">View Scoreboard</a>`
   );
 }
 
