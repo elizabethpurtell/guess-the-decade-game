@@ -30,34 +30,34 @@
     <!-- container setup with 5 columns/8 rows -->
     <section class="grid-container">
       <!-- first row contains logo and title/welcome stmt -->
-      <section class="topDisplay-container">
+      <!-- <section class="topDisplay-container">
         <img src="#" alt="logo design">
         <h1>Guess the Decade</h1>
         <h2>welcome, and something about the game sentence</h2>
-      </section>
+      </section> -->
       <!-- next row with instructions on left, right is theme change options -->
-      <section class="options-container">
+      <!-- <section class="options-container">
         <h3>Instructions</h3>
         <p>fill in instructions</p>
         <h3>Theme Change Options</h3>
         <p>add html for css theme changes</p>
-      </section>
+      </section> -->
       <section class="game-container">
       <!-- quiz will take up rows 3-6 -->
       <h1>Question and Answer Game</h1>
       <div id="start">
         <input type="text" id="playerName" placeholder="Enter your name">
-        <button id="startButton">Start Game</button>
+        <button id="startButton" onclick="startGame">Start Game</button>
       </div>
-      <div id="quiz" style="display: none;">
+      <div id="quiz">
         <h2 id="question">Question 1</h2>
         <div id="answers">
-          <img class="answer-img" id="answer1" onclick="checkAnswer(1)" src="img/80s-music.250.jpg" alt="Answer 1">
-          <img class="answer-img" id="answer2" onclick="checkAnswer(2)" src="img/90s-music.250.jpg" alt="Answer 2">
-          <img class="answer-img" id="answer3" onclick="checkAnswer(3)" src="img/00s-music.250.jpg" alt="Answer 3">
+          <img class="answer-img" id="answer1" onclick="checkAnswer(1)" src="img/80s-music.250.png" alt="Answer 1">
+          <img class="answer-img" id="answer2" onclick="checkAnswer(2)" src="img/90s-music.250.png" alt="Answer 2">
+          <img class="answer-img" id="answer3" onclick="checkAnswer(3)" src="img/00s-music.250.png" alt="Answer 3">
         </div>
       </div>
-      <div id="result" style="display: none;">
+      <div id="result">
         <p id="message"></p>
         <button id="nextButton" onclick="nextQuestion()">Next</button>
       </div>
@@ -67,7 +67,7 @@
         <!-- empty row -->
       </section>
 
-    </section> // close grid-container
+     </section>
   </main>
   <script src="js/game.js"></script>
   <script src="js/home.js"></script>

@@ -13,7 +13,14 @@ body {
   border: 1px solid #ccc;
   background-color: #f9f9f9;
 }
+/* Create CSS classes for hiding and showing elements. */
+.hidden {
+  display: none;
+}
 
+.visible {
+  display: block;
+}
 .answer-img {
   width: 250px;
   height: 250px;
