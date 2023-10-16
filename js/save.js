@@ -276,7 +276,7 @@ function QuizGame(playerName) {
 
   this.nextQuestion = function () {
     if (this.currentQuestion < this.questions.length) {
-      this.resultElement.style.display = 'none';
+      // this.resultElement.style.display = 'none';
       this.currentQuestion++;
       this.questionElement.textContent = this.questions[this.currentQuestion - 1].question;
       for (let i = 1; i <= 3; i++) {
@@ -373,3 +373,8 @@ document.addEventListener('DOMContentLoaded', function () {
 // quiz.startGame();
 startButton.onclick = startGame;
 
+// extras not sure why they are
+// Add event listeners to answer images
+for (let i = 1; i <= 3; i++) {
+  answerElements[i].addEventListener('click', () => checkAnswer(i));
+}

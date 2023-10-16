@@ -3,53 +3,10 @@
 
 // *** Global Variables ***
 
-let currentQuestion = 0;
+let currentQuestion = -1;
 let score = 0;
 let playerName = '';
-
-// *** DOM Windows ***
-
-const playerNameElement = document.getElementById('playerName');
-const startButton = document.getElementById('startButton');
-const startScreen = document.getElementById('start');
-const quizScreen = document.getElementById('quiz');
-const questionElement = document.getElementById('question');
-const answerElements = [null, document.getElementById('answer1'), document.getElementById('answer2'), document.getElementById('answer3')];
-const resultElement = document.getElementById('result');
-const messageElement = document.getElementById('message');
-const nextButton = document.getElementById('nextButton');
-
-
-// *** Constructor functions ***
-
-
-
-// *** Event Handlers ***
-
-
-// Add event listeners to answer images
-for (let i = 1; i <= 3; i++) {
-  answerElements[i].addEventListener('click', () => checkAnswer(i));
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-  const startButton = document.getElementById('startButton');
-
-  startButton.addEventListener('click', function () {
-    const playerNameElement = document.getElementById('playerName');
-    const playerName = playerNameElement.value;
-
-    if (playerName.trim() === '') {
-      alert('Enter a name to play the game');
-    } else {
-      const quiz = new QuizGame(playerName); // Create a new instance of QuizGame for the player
-      quiz.startGame();
-    }
-  });
-});
-
-
-// *** Helper Functions / Utilities ***
+let players = [];
 
 const questions = [
   {
@@ -94,35 +51,59 @@ const questions = [
   },
 ];
 
-// to start the game, the player needs to give their name, it will be used in the end for displaying score on popup, then is ported over to the home.html scoreboard via localStorage use on the home.js file. Player can then see score along with other players scores.
 
+// *** DOM Windows ***
+
+const playerNameElement = document.getElementById('playerName');
+const startButton = document.getElementById('startButton');
+const startScreen = document.getElementById('start');
+const quizScreen = document.getElementById('quiz');
+const questionElement = document.getElementById('question');
+const answerElements = [document.getElementById('answer1'), document.getElementById('answer2'), document.getElementById('answer3')];
+const resultElement = document.getElementById('result');
+const messageElement = document.getElementById('message');
+const nextButton = document.getElementById('nextButton');
+
+
+// *** Constructor functions ***
+
+
+
+// *** Event Handlers ***
+
+
+
+// *** Helper Functions / Utilities ***
+// to start the game, the player needs to give their name, it will be used in the end for displaying score on popup, then is ported over to the home.html scoreboard via localStorage use on the home.js file. Player can then see score along with other players scores.
 function startGame() {
   playerName = playerNameElement.value;
   if (playerName.trim() === '') {
     alert('Enter name to play game');
   } else {
     playerNameElement.disabled = true;
-    startScreen.style.display = 'none';
-    quizScreen.style.display = 'block';
+    startScreen.classList.add('hidden');
+    quizScreen.classList.add('visible');
     nextQuestion();
   }
 }
 
+
 function nextQuestion() {
-  if (currentQuestion < questions.length) {
-    resultElement.style.display = 'none';
+  if (currentQuestion < questions.length - 1) {
+    resultElement.class.add('hidden');
     currentQuestion++;
-    questionElement.textContent = questions[currentQuestion - 1].question;
+    questionElement.textContent = questions[currentQuestion].question;
     for (let i = 1; i <= 3; i++) {
-      answerElements[i].style.pointerEvents = 'auto'; // Enable click events for answer images
+      answerElements[i].classList.add('visible');
     }
   } else {
     showScore();
   }
 }
 
+
 function checkAnswer(selectedAnswer) {
-  const correctAnswer = questions[currentQuestion - 1].correctAnswer;
+  const correctAnswer = questions[currentQuestion].correctAnswer;
   if (selectedAnswer === correctAnswer) {
     score++;
     messageElement.textContent = 'Nailed it! Your music knowledge is on point!';
@@ -130,30 +111,40 @@ function checkAnswer(selectedAnswer) {
     messageElement.textContent = 'Not quite, but you\'re still a rockstar in our hearts!';
   }
   resultElement.style.display = 'block';
-  for (let i = 1; i <= 3; i++) {
-    answerElements[i].style.pointerEvents = 'none'; // Disable click events for answer images
+
+  // Disable click events for answer images
+  for (let i = 0; i < 3; i++) {
+    answerElements[i].removeEventListener('click', answerClickHandler);
   }
 }
-showScore = function () {
-  resultElement.style.display = 'none';
+
+// Add this function to handle click events on answer elements
+function answerClickHandler(event) {
+  const selectedAnswer = parseInt(event.target.dataset.answer);
+  checkAnswer(selectedAnswer);
+}
+
+// Add click event listeners to answer elements
+for (let i = 0; i < 3; i++) {
+  answerElements[i].addEventListener('click', answerClickHandler);
+}
+
+function showScore() {
   questionElement.textContent = 'Game Over, ' + playerName + '!';
   const playerScore = score;
   const rank = assignRank(playerScore);
+  startScreen.classList.remove('hidden');
+  quizScreen.classList.add('hidden');
 
-  // Create a new object for player data
   const playerData = {
     name: playerName,
     score: playerScore,
     rank: rank,
   };
 
-  // Add the player data to the players array
   players.push(playerData);
-
-  // Save the players array to localStorage
   localStorage.setItem('players', JSON.stringify(players));
 
-  // Create a popup window with the score and a link to the scoreboard/home page
   const popupWindow = window.open('', '_blank', 'width=400,height=200');
   popupWindow.document.write(
     `<h1>Game Over, ${playerName}!</h1>
@@ -161,8 +152,7 @@ showScore = function () {
     <p>Your Rank: ${rank}</p>
     <a href="index.html" target="_blank">View Scoreboard</a>`
   );
-};
-
+}
 
 // Function to assign rank names based on score ranges
 function assignRank(score) {
@@ -183,11 +173,9 @@ function assignRank(score) {
   }
 }
 
-
-
-// **** EXECUTABLE CODE *****
-
+// Set up the initial click event for the startButton
 startButton.onclick = startGame;
+
 
 
 // *** LOCAL STORAGE CONTINUES HERE ***
