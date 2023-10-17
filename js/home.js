@@ -30,5 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Append the row to the table body
       scoreTableBody.appendChild(newRow);
+      // newRow.appendChild(scoreTableBody);
   }
 });

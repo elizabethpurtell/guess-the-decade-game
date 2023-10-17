@@ -59,7 +59,11 @@ const startButton = document.getElementById('startButton');
 const startScreen = document.getElementById('start');
 const quizScreen = document.getElementById('quiz');
 const questionElement = document.getElementById('question');
-const answerElements = [document.getElementById('answer1'), document.getElementById('answer2'), document.getElementById('answer3')];
+const answerElements = [];
+for (let i = 1; i <= 3; i++) {
+  answerElements.push(document.getElementById(`answer${i}`));
+}
+// const answerElements = [document.getElementById('answer1'), document.getElementById('answer2'), document.getElementById('answer3')];
 const resultElement = document.getElementById('result');
 const messageElement = document.getElementById('message');
 const nextButton = document.getElementById('nextButton');
@@ -81,17 +85,19 @@ function startGame() {
     alert('Enter name to play game');
   } else {
     playerNameElement.disabled = true;
+    startScreen.disabled = true;
+    quizScreen.disabled = false;
     nextQuestion();
   }
 }
 
 
 function nextQuestion() {
-  if (currentQuestion < questions.length - 1) {
+  if (currentQuestion < questions.length) {
     currentQuestion++;
-    questionElement.textContent = questions[currentQuestion].question;
-    for (let i = 1; i <= 3; i++) {
-    
+    questionElement.textContent = questions[currentQuestion - 1].question;
+    for (let i = 0; i <= 3; i++) {
+      answerElements[i].addEventListener('click', answerClickHandler);
     }
   } else {
     showScore();
@@ -100,30 +106,26 @@ function nextQuestion() {
 
 
 function checkAnswer(selectedAnswer) {
-  const correctAnswer = questions[currentQuestion].correctAnswer;
+  const correctAnswer = questions[currentQuestion - 1].correctAnswer;
   if (selectedAnswer === correctAnswer) {
     score++;
     messageElement.textContent = 'Nailed it! Your music knowledge is on point!';
   } else {
     messageElement.textContent = 'Not quite, but you\'re still a rockstar in our hearts!';
   }
-  resultElement.style.display = 'block';
-
+  // resultElement.style.display = 'block';
+  resultElement.disabled = false;
   // Disable click events for answer images
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i <= 3; i++) {
     answerElements[i].removeEventListener('click', answerClickHandler);
   }
 }
+
 
 // Add this function to handle click events on answer elements
 function answerClickHandler(event) {
   const selectedAnswer = parseInt(event.target.dataset.answer);
   checkAnswer(selectedAnswer);
-}
-
-// Add click event listeners to answer elements
-for (let i = 0; i < 3; i++) {
-  answerElements[i].addEventListener('click', answerClickHandler);
 }
 
 function showScore() {

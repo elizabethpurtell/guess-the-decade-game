@@ -2,17 +2,50 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.container {
+.grid-container {
+  display: grid;
+  grid-template-columns: 100px 200px 200px 200px 50px;
+  grid-template-rows: 200px 300px 300px 100px 100px;
+  grid-gap: 0px;
+  row-gap: 10px;
+  column-gap: 0px;
+  max-width: 1025;
+  margin: 0px;
+  padding-bottom: 50px;
+  background-color: rgb(120, 152, 151);
+  justify-content: center;
+  align-items: center;
+}
+
+section .options-container {
+  grid-column: 1 / span 5;
+  grid-row: 1;
+  padding: 20px;
   text-align: center;
 }
 
-#quiz {
-  display: block;
-  margin: 20px;
+section .game-container {
+  /* This element will be a grid item, but also a flex container */
+  grid-row-start: 2;
+  grid-row-end: 6;
+  grid-column: 2 / span 3;
   padding: 10px;
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  object-fit: contain;
+  margin-top: 10px;
 }
+#answers .answer-img {
+  display: block;
+  width: 250px;
+  height: 250px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+
 /* Create CSS classes for hiding and showing elements. */
 .hidden {
   display: none;
@@ -21,12 +54,7 @@ body {
 .visible {
   display: block;
 }
-.answer-img {
-  width: 250px;
-  height: 250px;
-  cursor: pointer;
-  margin: 10px;
-}
+
 
 .hidden {
   display: none;
