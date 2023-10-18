@@ -1,23 +1,24 @@
 /* Global settings */
 
 body {
-  background: rgb(171, 255, 225);
-  background: linear-gradient(0deg, rgba(171, 255, 225, 1) 8%, rgba(255, 241, 191, 1) 50%, rgba(241, 253, 255, 1) 100%);
+  background: rgb(0, 0, 0);
 }
 
 header {
   width: 100%;
+  height: 80px;
   overflow: hidden;
   margin: auto;
-  background-color: #676767;
+  margin-bottom: 30px;
+  background-color: #30015c;
   text-align: center;
 }
 
 /* Text */
 h1 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Orbitron', sans-serif;
   font-weight: 900;
-  color: #864e20;
+  color: rgb(34, 255, 0);
   text-transform: uppercase;
   font-size: 3em;
   text-align: center;
@@ -25,7 +26,7 @@ h1 {
 }
 
 h2 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Orbitron', sans-serif;
   font-weight: 500;
   font-size: 2em;
   text-align: center;
@@ -34,7 +35,7 @@ h2 {
 }
 
 h3 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Orbitron', sans-serif;
   font-weight: 300;
   font-size: 1.5em;
   text-align: center;
@@ -42,7 +43,7 @@ h3 {
 }
 
 h4 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Orbitron', sans-serif;
   font-weight: 500;
   font-size: 1em;
   text-align: center;
@@ -50,17 +51,20 @@ h4 {
 }
 
 h5 {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  font-size: smaller;
-  text-align: center;
+  font-size: 1em;
+  color: #ffffff;
+  padding: 16px 16px;
+  text-decoration: none;
 }
 
 p {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: 'Orbitron', sans-serif;
   font-weight: 300;
   font-size: 1em;
-  text-align: left;
+  color: white;
+  text-align: center;
   margin-bottom: 5px;
 }
 
@@ -86,52 +90,185 @@ p {
 
 .topNav li a {
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 1.25em;
   color: #ffffff;
-  padding: 16px 16px;
+  padding: 16px;
   text-decoration: none;
 }
 
 .topNav .active {
-  background-color: #77079fc3;
+  padding: 20px;
+  color: #000000;
+  background-color: rgb(34, 255, 0);
 }
 
 /* main  */
 
 main {
   display: grid;
-  /* margin: 50px;
-  padding: 15px; */
   justify-content: center;
 }
 
-/* section */
-
-/* table */
-
-table {
-  width: 50%;
-  border-collapse: collapse;
-  margin: 20px;
+main .grid-container {
+  display: grid;
+  grid-template-columns: 150px 200px 200px 200px 150px;
+  grid-template-rows: 100px 100px 200px 200px 50px;
+  grid-gap: 0px;
+  row-gap: 10px;
+  column-gap: 0px;
+  max-width: 900px;;
+  margin: 30px;
+  margin-top: 30px;
+  padding-bottom: 50px;
+  background-color: rgb(0, 0, 0);
+  justify-content: center;
+  align-items: center;
 }
 
-th, td {
-  border: 1px solid black;
-  padding: 8px;
+
+/* section */
+
+section .topDisplay-container {
+  display: grid;
+  background: #30015c;
+  text-align: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+section .topDisplay-container #logoImg {
+  grid-column: 1 / span 1;
+  grid-row: 1;
+  width: 60px;
+  height: 60px;
+  border: #8503ff;
+  border-style: solid;
+  border-width: 2px;
+}
+
+section .topDisplay-container h1 {
+  grid-column: 3 / span 3;
+  grid-row: 1;
+  text-align: center;
+}
+section .topDisplay-container p {
+  grid-column: 3 / span 3;
+  grid-row: 1;
   text-align: center;
 }
 
-th {
-  background-color: #333;
-  color: white;
+section .playBtn {
+  grid-column: 3 / span 3;
+  grid-row: 2;
+  text-align: center;
+  justify-content: center;
 }
 
 
+button {
+  display: block;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  color: rgb(21, 255, 0);
+  border-width: 8px;
+  border-style: solid;
+  background: #000000;
+  border-image: linear-gradient(to top, rgb(34, 255, 0), rgb(252, 1, 239)) 1;
+  width: 200px;
+  cursor: pointer;
+  padding: 10px;
+  box-shadow:  0 0 40px rgba(255, 0, 238, 0.982);
+}
+
+
+/* table */
+section .score-container {
+  grid-column: 1 / span 5;
+  grid-row-start: 3;
+  grid-row-end: 5;
+  padding: 20px;
+  text-align: center;
+  border: #8503ff;
+  border-style: solid;
+  border-image: linear-gradient(to top, rgb(34, 255, 0), darkorchid, hotpink) 1;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+
+section #scoreboard {
+  grid-column: 1 / span 5;
+  grid-row: 2;
+  font-family: 'Orbitron', sans-serif;
+  font-style: bold;
+  font-size: 60px;
+  margin: 10px;
+  margin-top: 10px;
+  color: rgb(34, 255, 0);
+  text-shadow:  0 0 30px rgb(68, 255, 0, 0.8);
+ }
+
+
+section table {
+  grid-column: 1 / span 5;
+  grid-row-start: 3;
+  grid-row-end: 5;
+  border-collapse: collapse;
+  width: 80%;
+  color: black;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 7px;
+  overflow: hidden;
+  box-shadow:  0 0 20px rgba(255, 0, 238, 0.982);
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+} 
+
+table th {
+  background-color: hotpink;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+/* Style the table header to give it a background color and aligned text */
+table tr:nth-child(even) td {
+  background-color: rgb(34, 255, 0);
+}
+/* Style the data inside the cells of the table */
+table td {
+  background-color: #000000;
+  color: hotpink;
+  padding: 20px;
+  font-weight: 600;
+}
+
+table tr:hover td {
+  background-color: rgb(34, 255, 0);
+}
+
 
 /* footer */
-
 footer {
   display: grid;
-  background-color: #676767;
+  max-width: 100%;
+  background-color: #30015c;
+}
+.footer-container {
+  grid-column: 1 / span 5;
+  grid-row: 5;
+  text-align: center;
+  justify-content: center;
+  margin: 20px;
 }
