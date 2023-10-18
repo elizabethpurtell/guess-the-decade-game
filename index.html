@@ -12,8 +12,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;0,700;0,900;1,100;1,500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap&effect=effect-fire"
     rel="stylesheet">
 </head>
 
@@ -30,13 +39,24 @@
   </header>
   <main>
     <section class="grid-container">
+      <!-- first row contains logo and title/welcome stmt -->
+      <!-- <section class="topDisplay-container">
+        <img id="logoImg" src="#" alt="logo design">
+        <h1>Guess the Decade</h1>
+
+        <p>welcome, and something about the game sentence</p>
+      </section> -->
+      <section class="playBtn">
+        <a class="playAgainBtn" href="pages/game.html">
+          <button>Play Again</button></a>
+      </section>
       <section class="score-container">
-        <h1>Score Board</h1>
+        <h1 id="scoreboard">Score Board</h1>
         <div class="table-container">
           <table>
             <thead>
               <tr>
-                <th>Player Name</th>
+                <th>Player</th>
                 <th>Score</th>
                 <th>Rank</th>
               </tr>
@@ -49,7 +69,9 @@
     </section>
   </main>
   <footer>
-    <h5>&#169; Elizabeth Purtell All Rights Reserved 2023</h5>
+    <section class="footer-container">
+      <h5>&#169; 2023 Elizabeth Purtell All Rights Reserved</h5>
+    </section>
   </footer>
 
 
