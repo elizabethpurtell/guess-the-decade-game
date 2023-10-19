@@ -14,7 +14,7 @@ header {
 
 /* Text */
 h1 {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Overlock', sans-serif;
   font-weight: 900;
   color: rgb(34, 255, 0);
   text-transform: uppercase;
@@ -24,7 +24,7 @@ h1 {
 }
 
 h2 {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Overlock', sans-serif;
   font-weight: 500;
   font-size: 2em;
   text-align: center;
@@ -33,7 +33,7 @@ h2 {
 }
 
 h3 {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Overlock', sans-serif;
   font-weight: 300;
   font-size: 1.5em;
   text-align: center;
@@ -41,7 +41,7 @@ h3 {
 }
 
 h4 {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Overlock', sans-serif;
   font-weight: 500;
   font-size: 1em;
   text-align: center;
@@ -58,7 +58,7 @@ h5 {
 }
 
 p {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Overlock', sans-serif;
   font-weight: 300;
   font-size: 1em;
   color: white;
@@ -111,9 +111,9 @@ main {
 main .grid-container {
   display: grid;
   grid-template-columns: 150px 200px 200px 200px 150px;
-  grid-template-rows: 100px 100px 200px 200px 50px;
+  grid-template-rows: 100px 200px 200px 200px 200px 200px 200px 200px 100px;
   grid-gap: 0px;
-  row-gap: 10px;
+  row-gap: 20px;
   column-gap: 0px;
   max-width: 900px;;
   margin: 30px;
@@ -125,29 +125,68 @@ main .grid-container {
 }
 section .topDisplay-container {
   display: grid;
-  background: #30015c;
-  text-align: center;
-  justify-content: center;
-  margin-top: 20px;
+  grid-column: 1 span 5;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  max-width: 100%;
+  background: #74f3ff82;
+  /* text-align: center;
+  justify-content: center; */
+  /* margin-top: 20px; */
 }
-
+/* 
 section .topDisplay-container #logoImg {
-  grid-column: 1 / span 1;
+  grid-column: 1 / 5;
   grid-row: 1;
   width: 60px;
   height: 60px;
   border: #8503ff;
   border-style: solid;
   border-width: 2px;
+} */
+
+.topDisplay-container h1 {
+  grid-column: 1 / span 5;
+  grid-row: 1;
+  text-align: center;
+}
+.topDisplay-container p {
+  grid-column: 1 / span 5;
+  grid-row: 2;
+  text-align: center;
 }
 
-section .topDisplay-container h1 {
-  grid-column: 3 / span 3;
-  grid-row: 1;
+.links-container {
+  grid-column: 2 / span 3;
+  grid-row: 3;
   text-align: center;
 }
-section .topDisplay-container p {
-  grid-column: 3 / span 3;
-  grid-row: 1;
+
+.pitch-container {
+  grid-column: 1 / span 5;
+  grid-row-start: 4;
+  grid-row-end: 8;
+  width: 500px;
+  height: 700px;
+  margin-top: 30px;
+  padding: 10px;
   text-align: center;
+  border: #8503ff;
+  border-style: solid;
+  border-width: 2px;
+}
+
+/* footer */
+footer {
+  display: grid;
+  max-width: 100%;
+  background-color: #30015c;
+}
+
+.footer-container {
+  grid-column: 1 / span 5;
+  grid-row: 5;
+  text-align: center;
+  justify-content: center;
+  margin: 20px;
 }
