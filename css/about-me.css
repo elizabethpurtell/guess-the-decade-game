@@ -3,13 +3,14 @@ body {
 }
 
 header {
-  width: 100%;
+  max-width: 100%;
   height: 80px;
   overflow: hidden;
   margin: auto;
   margin-bottom: 30px;
   background-color: #30015c;
   text-align: center;
+  justify-content: center;
 }
 
 /* Text */
@@ -108,66 +109,60 @@ main {
   justify-content: center;
 }
 
-main .grid-container {
-  display: grid;
-  grid-template-columns: 150px 200px 200px 200px 150px;
-  grid-template-rows: 100px 200px 200px 200px 200px 200px 200px 200px 100px;
+/* start grid container */
+.topNav {
+  grid-area: header;
+}
+
+.topDisplay-container {
+  grid-area: top;
+}
+.changeBkgrndColor {
+  grid-area: right;
+}
+.logoImg {
+  grid-area: left;
+}
+.links-container {
+  grid-area: left;
+}
+.pitch-container {
+  grid-area: main;
+}
+.footer-container {
+  grid-area: footer;
+}
+
+
+.grid-container {
+ display: grid;
+ grid-template-areas: 'header header header header header header' 'left top top top top right' 'left main main main main right' 'main2 main2 main2 main2 main2 main2' 'main3 main3 main3 main3 main3 main3' 'footer footer footer footer footer footer';
   grid-gap: 0px;
   row-gap: 20px;
-  column-gap: 0px;
-  max-width: 900px;;
-  margin: 30px;
+  column-gap: 20px;
+  max-width: 800px;;
+  margin: 50px;
   margin-top: 30px;
   padding-bottom: 50px;
   background-color: rgb(0, 0, 0);
   justify-content: center;
   align-items: center;
 }
-section .topDisplay-container {
-  display: grid;
-  grid-column: 1 span 5;
-  grid-row-start: 1;
-  grid-row-end: 3;
+.topDisplay-container {
   max-width: 100%;
   background: #74f3ff82;
   /* text-align: center;
   justify-content: center; */
   /* margin-top: 20px; */
 }
-/* 
-section .topDisplay-container #logoImg {
-  grid-column: 1 / 5;
-  grid-row: 1;
-  width: 60px;
-  height: 60px;
-  border: #8503ff;
-  border-style: solid;
-  border-width: 2px;
-} */
-
-.topDisplay-container h1 {
-  grid-column: 1 / span 5;
-  grid-row: 1;
-  text-align: center;
-}
-.topDisplay-container p {
-  grid-column: 1 / span 5;
-  grid-row: 2;
-  text-align: center;
-}
 
 .links-container {
-  grid-column: 2 / span 3;
-  grid-row: 3;
   text-align: center;
 }
 
 .pitch-container {
-  grid-column: 1 / span 5;
-  grid-row-start: 4;
-  grid-row-end: 8;
-  width: 500px;
-  height: 700px;
+  /* width: 500px;
+  height: 700px; */
   margin-top: 30px;
   padding: 10px;
   text-align: center;
@@ -178,14 +173,11 @@ section .topDisplay-container #logoImg {
 
 /* footer */
 footer {
-  display: grid;
   max-width: 100%;
   background-color: #30015c;
 }
 
 .footer-container {
-  grid-column: 1 / span 5;
-  grid-row: 5;
   text-align: center;
   justify-content: center;
   margin: 20px;

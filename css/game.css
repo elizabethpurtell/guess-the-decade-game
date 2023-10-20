@@ -45,7 +45,8 @@ h3 {
 h4 {
   font-family: 'Orbitron', sans-serif;
   font-weight: 500;
-  font-size: 1em;
+  font-size: 3em;
+  color: #ffffff;
   text-align: center;
   margin-bottom: 10px;
 }
@@ -106,18 +107,34 @@ p {
 /* main  */
 
 main {
-  display: grid;
+  /* display: grid; */
   justify-content: center;
 }
 
-main .grid-container {
+.topDisplay {
+  grid-area: top;
+}
+#topRowGame {
+  grid-area: main1;
+}
+#quiz {
+  grid-area: main2;
+}
+#answers {
+  grid-area: main5;
+}
+#result {
+  grid-area: main3;
+}
+footer {
+  grid-area: footer;
+}
+.grid-container {
   display: grid;
-  grid-template-columns: 150px 200px 200px 200px 150px;
-  grid-template-rows: 100px 100px 200px 200px 50px;
-  grid-gap: 0px;
-  row-gap: 10px;
+  grid-template-areas: 'header header header header header header' 'left top top top top right' 'main1 main1 main1 main1 main1 main1' 'main2 main2 main2 main2 main2 main2' 'main5 main5 main5 main5 main5 main5' 'main3 main3 main3 main3 main3 main3' 'footer footer footer footer footer footer';
+  /* grid-gap: 220px;
+  row-gap: 80px; */
   column-gap: 0px;
-  max-width: 900px;;
   margin: 30px;
   margin-top: 30px;
   padding-bottom: 50px;
@@ -126,62 +143,139 @@ main .grid-container {
   align-items: center;
 }
 
-
 /* section */
 
-section .topDisplay-container {
-  display: grid;
+/* .topDisplay {
   background: #30015c;
   text-align: center;
   justify-content: center;
   margin-top: 20px;
-}
+} */
 
-section .topDisplay-container #logoImg {
-  grid-column: 1 / span 1;
-  grid-row: 1;
-  width: 60px;
-  height: 60px;
-  border: #8503ff;
+#playerName {
+  height: 50px;
+  width: 300px;
+  color: #000000;
+  font-size: 16px;
+  text-align: center;
+  border-width: 8px;
   border-style: solid;
-  border-width: 2px;
-}
-
-section .topDisplay-container h1 {
-  grid-column: 3 / span 3;
-  grid-row: 1;
-  text-align: center;
-}
-section .topDisplay-container p {
-  grid-column: 3 / span 3;
-  grid-row: 1;
-  text-align: center;
-}
-
-section .game-container {
-  /* This element will be a grid item, but also a flex container */
-  grid-row-start: 2;
-  grid-row-end: 6;
-  grid-column: 2 / span 3;
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  border-color: #ff00d9;
+  background: #26ff00;
+  box-shadow: 0 0 10px rgba(255, 0, 238, 0.982);
+  justify-content: center;
   align-items: center;
-  object-fit: contain;
-  margin-top: 10px;
 }
-#answers .answer-img {
-  display: block;
+
+#startButton {
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  color: rgb(21, 255, 0);
+  border-width: 8px;
+  border-style: solid;
+  background: #000000;
+  border-image: linear-gradient(to top, rgb(34, 255, 0), rgb(252, 1, 239)) 1;
+  width: 200px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 50px;
+  box-shadow: 0 0 40px rgba(255, 0, 238, 0.982);
+}
+#question {
+  width: 600px;
+  height: 300px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 300;
+  font-size: 2em;
+  color: rgb(252, 1, 239);
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#quiz {
+  width: 950px;
+  height: 900px;
+  border: #53ff03;
+  border-style: solid;
+  justify-content: center;
+  align-items: center;
+}
+
+#answers {
+  width: 950px;
+  height: 400px;
+  /* margin: 30px; */
+  /* border: #03f2ff;
+  border-style: solid; */
+  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+}
+.answer-img {
+  /* display:; */
   width: 250px;
   height: 250px;
   cursor: pointer;
-  margin: 10px;
+  padding: 10px;
+  box-shadow: 0 0 20px rgba(255, 0, 238, 0.982);
+  /* align-items: center; */
 }
 
+#result {
+  width: 950px;
+  height: 300px;
+  /* padding: 20px; */
+  text-align: center;
+  border: #8503ff;
+  border-style: solid;
+  border-image: linear-gradient(to top, rgb(34, 255, 0), rgb(2, 247, 198)) 1;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 30px;
+  margin-bottom: 30px; */
+}
+#nextButton {
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(2, 247, 198);
+  border-width: 8px;
+  border-style: solid;
+  background: #000000;
+  border-image: linear-gradient(to bottom, rgb(2, 247, 198), rgb(43, 252, 1)) 1;
+  width: 200px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 50px;
+  box-shadow: 0 0 10px rgba(43, 252, 1, 0.982);
+}
+#message {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 300;
+  font-size: 1.5em;
+  color: rgb(2, 247, 198);
+  text-align: center;
+}
+/* footer */
+footer {
+  display: grid;
+  width: 100%;
+  background-color: #30015c;
+  text-align: center;
+  justify-content: center;
+}
+
+/* .footer-container {
+  margin: 20px;
+} */
 
 /* Create CSS classes for hiding and showing elements. */
-.hidden {
+/* .hidden {
   display: none;
 }
 
@@ -192,4 +286,4 @@ section .game-container {
 
 .hidden {
   display: none;
-}
+} */
