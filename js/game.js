@@ -19,7 +19,7 @@ const quizScreen = document.getElementById('quiz');
 const questionElement = document.getElementById('question');
 const answerElements = [];
 for (let i = 1; i < 3; i++) {
-  answerElements.push(document.getElementById(`answers${i}`));
+  answerElements.push(document.getElementById(`answer${i}`));
 }
 // const answerElements = [document.getElementById('answer1'), document.getElementById('answer2'), document.getElementById('answer3')];
 const resultElement = document.getElementById('result');
@@ -61,7 +61,7 @@ function QuizQuestion(question, correctAnswer) {
 // *** Helper Functions / Utilities ***
 // to start the game, the player needs to give their name, it will be used in the end for displaying score on popup, then is ported over to the home.html scoreboard via localStorage use on the home.js file. Player can then see score along with other players scores.
 function startGame() {
-
+  currentQuestion = 0;
   playerName = playerNameElement.value;
   if (playerName.trim() === '') {
     alert('Enter name to play game');
