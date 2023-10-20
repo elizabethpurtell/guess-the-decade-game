@@ -64,11 +64,12 @@
           <h4>Guess the Decade!</h4>
           <div id="start">
             <input type="text" id="playerName" placeholder="Enter Player Name">
-            <button id="startButton" onclick="startGame">Play Game</button>
+            <button onclick="startGame" id="startButton">Play Game</button>
           </div>
+          <!-- onclick="startGame" -->
         </div>
         <div id="quiz">
-          <p id="question">Question 1</p>
+          <h2 id="question">Question 1</h2>
           <div id="answers">
             <img class="answer-img" id="answer1" onclick="checkAnswer(1)" src="../img/80s-music.250.png" alt="Answer 1">
             <img class="answer-img" id="answer2" onclick="checkAnswer(2)" src="../img/90s-music.250.png" alt="Answer 2">
