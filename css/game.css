@@ -111,11 +111,11 @@ main {
   justify-content: center;
 }
 
-.topDisplay {
+/* .topDisplay {
   grid-area: top;
-}
+} */
 #topRowGame {
-  grid-area: main1;
+  grid-area: top;
 }
 #quiz {
   grid-area: main2;
@@ -131,7 +131,7 @@ footer {
 }
 .grid-container {
   display: grid;
-  grid-template-areas: 'header header header header header header' 'left top top top top right' 'main1 main1 main1 main1 main1 main1' 'main2 main2 main2 main2 main2 main2' 'main5 main5 main5 main5 main5 main5' 'main3 main3 main3 main3 main3 main3' 'footer footer footer footer footer footer';
+  grid-template-areas: 'header header header header header header' 'top top top top top top' 'main1 main1 main1 main1 main1 main1' 'main2 main2 main2 main2 main2 main2' 'main5 main5 main5 main5 main5 main5' 'main3 main3 main3 main3 main3 main3' 'footer footer footer footer footer footer';
   /* grid-gap: 220px;
   row-gap: 80px; */
   column-gap: 0px;
@@ -152,7 +152,20 @@ footer {
   margin-top: 20px;
 } */
 
+.game-container {
+  /* position: relative; */
+  /* display: block; */
+}
+
+#start {
+  position: relative;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
 #playerName {
+  position: absolute;
   height: 50px;
   width: 300px;
   color: #000000;
@@ -168,6 +181,7 @@ footer {
 }
 
 #startButton {
+  position: relative;
   font-family: 'Orbitron', sans-serif;
   text-transform: uppercase;
   text-align: center;
@@ -184,7 +198,9 @@ footer {
   margin: 50px;
   box-shadow: 0 0 40px rgba(255, 0, 238, 0.982);
 }
+
 #question {
+  position: relative;
   width: 600px;
   height: 300px;
   font-family: 'Orbitron', sans-serif;

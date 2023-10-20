@@ -7,7 +7,7 @@ let currentQuestion = -1;
 let score = 0;
 let playerName = '';
 let players = [];
-
+let question = [];
 
 
 // *** DOM Windows ***
@@ -32,18 +32,7 @@ function QuizQuestion (question, correctAnswer){
   this.question = question;
   this.correctAnswer = correctAnswer;
 }
-let q1 = new QuizQuestion('1/10: Which decade did the song "Bille Jean" by Michael Jackson come from?', 1);
-let q2 = new QuizQuestion('2/10: Which decade did the song "Sweet Child-o-Mine" by Guns N Roses come from?', 1);
-let q3 = new QuizQuestion('3/10: Which decade did the song "Wannabe" by Spice Girls come from?', 2);
-let q4 = new QuizQuestion('4/10: Which decade did the song "Clocks" by Coldplay come from?', 3);
-let q5 = new QuizQuestion('5/10: Which decade did the song "Smells Like Teen Spirit" by Nirvana come from?', 2);
-let q6 = new QuizQuestion('6/10: Which decade did the song "I Want It That Way" by Backstreet Boys come from?', 2);
-let q7 = new QuizQuestion('7/10: Which decade did the song "Halo" by Beyoncé come from?', 3);
-let q8 = new QuizQuestion('8/10: Which decade did the song "Livin on a Prayer" by Bon Jovi come from?', 1);
-let q9 = new QuizQuestion('9/10: Which decade did the song "Rolling in the Deep" by Adele come from?', 3);
-let q10 = new QuizQuestion('10/10: Which decade did the song "Like a Prayer" by Madonna come from?', 1);
 
-question.push(q1, q2, q3, q4, q5, q6, q7, q8, q9, q10);
 
 
 
@@ -51,21 +40,21 @@ question.push(q1, q2, q3, q4, q5, q6, q7, q8, q9, q10);
 
 // *** Event Listener ***
 
-document.addEventListener('DOMContentLoaded', function () {
-  const startButton = document.getElementById('startButton');
+// document.addEventListener('DOMContentLoaded', function () {
+//   const startButton = document.getElementById('startButton');
 
-  startButton.addEventListener('click', function () {
-    const playerNameElement = document.getElementById('playerName');
-    const playerName = playerNameElement.value;
+//   startButton.addEventListener('click', function () {
+//     const playerNameElement = document.getElementById('playerName');
+//     const playerName = playerNameElement.value;
 
-    if (playerName.trim() === '') {
-      alert('Enter a name to play the game');
-    } else {
-      const quiz = new QuizGame(playerName); // Create a new instance of QuizGame for the player
-      quiz.startGame();
-    }
-  });
-});
+//     if (playerName.trim() === '') {
+//       alert('Enter a name to play the game');
+//     } else {
+//       const quiz = new QuizGame(playerName); // Create a new instance of QuizGame for the player
+//       quiz.startGame();
+//     }
+//   });
+// });
 
 
 // *** Helper Functions / Utilities ***
@@ -166,14 +155,25 @@ function assignRank(score) {
     return 'Undefined Rank';
   }
 }
+//  *** Executable code on page load ***
+ 
+let q1 = new QuizQuestion('1/10: Which decade did the song "Bille Jean" by Michael Jackson come from?', 1);
+let q2 = new QuizQuestion('2/10: Which decade did the song "Sweet Child-o-Mine" by Guns N Roses come from?', 1);
+let q3 = new QuizQuestion('3/10: Which decade did the song "Wannabe" by Spice Girls come from?', 2);
+let q4 = new QuizQuestion('4/10: Which decade did the song "Clocks" by Coldplay come from?', 3);
+let q5 = new QuizQuestion('5/10: Which decade did the song "Smells Like Teen Spirit" by Nirvana come from?', 2);
+let q6 = new QuizQuestion('6/10: Which decade did the song "I Want It That Way" by Backstreet Boys come from?', 2);
+let q7 = new QuizQuestion('7/10: Which decade did the song "Halo" by Beyoncé come from?', 3);
+let q8 = new QuizQuestion('8/10: Which decade did the song "Livin on a Prayer" by Bon Jovi come from?', 1);
+let q9 = new QuizQuestion('9/10: Which decade did the song "Rolling in the Deep" by Adele come from?', 3);
+let q10 = new QuizQuestion('10/10: Which decade did the song "Like a Prayer" by Madonna come from?', 1);
 
-
-
+question.push(q1, q2, q3, q4, q5, q6, q7, q8, q9, q10);
 
 
 // Set up the initial click event for the startButton
 startButton.onclick = startGame;
-
+QuizQuestion();
 
 // *** LOCAL STORAGE CONTINUES HERE ***
 
