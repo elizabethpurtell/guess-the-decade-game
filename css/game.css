@@ -22,7 +22,7 @@ h1 {
   text-transform: uppercase;
   font-size: 3em;
   text-align: center;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 
 h2 {
@@ -30,8 +30,8 @@ h2 {
   font-weight: 500;
   font-size: 2em;
   text-align: center;
-  margin-top: 100px;
-  margin-bottom: 40px;
+  /* margin-top: 100px;
+  margin-bottom: 40px; */
 }
 
 h3 {
@@ -39,7 +39,7 @@ h3 {
   font-weight: 300;
   font-size: 1.5em;
   text-align: center;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 h4 {
@@ -48,7 +48,7 @@ h4 {
   font-size: 3em;
   color: #ffffff;
   text-align: center;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 
 h5 {
@@ -198,8 +198,16 @@ footer {
   margin: 50px;
   box-shadow: 0 0 40px rgba(255, 0, 238, 0.982);
 }
+#quiz {
+  width: 950px;
+  height: 500px;
+  border: #53ff03;
+  border-style: solid;
+  justify-content: center;
+  align-items: center;
+}
 
-#question {
+#question h2 {
   position: relative;
   width: 600px;
   height: 300px;
@@ -211,38 +219,31 @@ footer {
   margin-bottom: 20px;
 }
 
-#quiz {
-  width: 950px;
-  height: 900px;
-  border: #53ff03;
-  border-style: solid;
-  justify-content: center;
-  align-items: center;
-}
 
 #answers {
-  width: 950px;
-  height: 400px;
+  /* width: 950px; */
+  /* height: 300px; */
   /* margin: 30px; */
   /* border: #03f2ff;
   border-style: solid; */
   justify-content: space-around;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 }
 .answer-img {
   /* display:; */
   width: 250px;
   height: 250px;
   cursor: pointer;
-  padding: 10px;
+  /* padding: 10px; */
   box-shadow: 0 0 20px rgba(255, 0, 238, 0.982);
+  margin: 10px;
   /* align-items: center; */
 }
 
 #result {
   width: 950px;
-  height: 300px;
+  height: 200px;
   /* padding: 20px; */
   text-align: center;
   border: #8503ff;

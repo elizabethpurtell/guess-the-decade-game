@@ -18,8 +18,8 @@ const startScreen = document.getElementById('start');
 const quizScreen = document.getElementById('quiz');
 const questionElement = document.getElementById('question');
 const answerElements = [];
-for (let i = 1; i <= 3; i++) {
-  answerElements.push(document.getElementById(`answer${i}`));
+for (let i = 1; i < 3; i++) {
+  answerElements.push(document.getElementById(`answers${i}`));
 }
 // const answerElements = [document.getElementById('answer1'), document.getElementById('answer2'), document.getElementById('answer3')];
 const resultElement = document.getElementById('result');
@@ -28,7 +28,7 @@ const nextButton = document.getElementById('nextButton');
 
 
 // *** Constructor functions ***
-function QuizQuestion (question, correctAnswer){
+function QuizQuestion(question, correctAnswer) {
   this.question = question;
   this.correctAnswer = correctAnswer;
 }
@@ -50,7 +50,8 @@ function QuizQuestion (question, correctAnswer){
 //     if (playerName.trim() === '') {
 //       alert('Enter a name to play the game');
 //     } else {
-//       const quiz = new QuizGame(playerName); // Create a new instance of QuizGame for the player
+//       // const quiz = new QuizGame(playerName); 
+//       // Create a new instance of QuizGame for the player
 //       quiz.startGame();
 //     }
 //   });
@@ -60,6 +61,7 @@ function QuizQuestion (question, correctAnswer){
 // *** Helper Functions / Utilities ***
 // to start the game, the player needs to give their name, it will be used in the end for displaying score on popup, then is ported over to the home.html scoreboard via localStorage use on the home.js file. Player can then see score along with other players scores.
 function startGame() {
+
   playerName = playerNameElement.value;
   if (playerName.trim() === '') {
     alert('Enter name to play game');
@@ -69,10 +71,8 @@ function startGame() {
     quizScreen.disabled = false;
     nextQuestion();
   }
- 
+
 }
-
-
 
 
 function nextQuestion() {
@@ -80,7 +80,7 @@ function nextQuestion() {
     currentQuestion++;
     messageElement.textContent = '';
     questionElement.textContent = questions[currentQuestion - 1].question;
-    for (let i = 0; i <= 3; i++) {
+    for (let i = 0; i < 3; i++) {
       answerElements[i].addEventListener('click', answerClickHandler);
     }
   } else {
@@ -94,15 +94,15 @@ function checkAnswer(selectedAnswer) {
   if (selectedAnswer === correctAnswer) {
     score++;
     messageElement.textContent = 'Nailed it! Your music knowledge is on point!';
-    nextQuestion();
+    // nextQuestion();
   } else {
     messageElement.textContent = 'Not quite, but you\'re still a rockstar in our hearts!';
-    nextQuestion();
+    // nextQuestion();
   }
-  // resultElement.style.display = 'block';
+  resultElement.style.display = 'block';
   resultElement.disabled = false;
   // Disable click events for answer images
-  for (let i = 0; i <= 3; i++) {
+  for (let i = 0; i < 3; i++) {
     answerElements[i].removeEventListener('click', answerClickHandler);
   }
 }
@@ -156,7 +156,7 @@ function assignRank(score) {
   }
 }
 //  *** Executable code on page load ***
- 
+
 let q1 = new QuizQuestion('1/10: Which decade did the song "Bille Jean" by Michael Jackson come from?', 1);
 let q2 = new QuizQuestion('2/10: Which decade did the song "Sweet Child-o-Mine" by Guns N Roses come from?', 1);
 let q3 = new QuizQuestion('3/10: Which decade did the song "Wannabe" by Spice Girls come from?', 2);
