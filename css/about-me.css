@@ -60,10 +60,10 @@ h5 {
 
 p {
   font-family: 'Overlock', sans-serif;
-  font-weight: 300;
-  font-size: 1em;
+  font-weight: 100;
+  font-size: 1.25em;
   color: white;
-  text-align: center;
+  text-align: left;
   margin-bottom: 5px;
 }
 

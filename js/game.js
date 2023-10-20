@@ -7,7 +7,7 @@ let currentQuestion = -1;
 let score = 0;
 let playerName = '';
 let players = [];
-let question = [];
+let questions = [];
 
 
 // *** DOM Windows ***
@@ -168,12 +168,12 @@ let q8 = new QuizQuestion('8/10: Which decade did the song "Livin on a Prayer" b
 let q9 = new QuizQuestion('9/10: Which decade did the song "Rolling in the Deep" by Adele come from?', 3);
 let q10 = new QuizQuestion('10/10: Which decade did the song "Like a Prayer" by Madonna come from?', 1);
 
-question.push(q1, q2, q3, q4, q5, q6, q7, q8, q9, q10);
+questions.push(q1, q2, q3, q4, q5, q6, q7, q8, q9, q10);
 
 
 // Set up the initial click event for the startButton
 startButton.onclick = startGame;
-QuizQuestion();
+// QuizQuestion();
 
 // *** LOCAL STORAGE CONTINUES HERE ***
 
