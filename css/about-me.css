@@ -19,7 +19,7 @@ h1 {
   font-weight: 900;
   color: rgb(34, 255, 0);
   text-transform: uppercase;
-  font-size: 3em;
+  font-size: 5em;
   text-align: center;
   margin-bottom: 10px;
 }
@@ -27,10 +27,11 @@ h1 {
 h2 {
   font-family: 'Overlock', sans-serif;
   font-weight: 500;
-  font-size: 2em;
+  font-size: 3em;
+  color: #09f4aa;
   text-align: center;
-  margin-top: 100px;
-  margin-bottom: 40px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 h3 {
@@ -124,10 +125,10 @@ main {
   grid-area: left;
 }
 .links-container {
-  grid-area: left;
+  grid-area: main;
 }
 .pitch-container {
-  grid-area: main;
+  grid-area: main2;
 }
 .footer-container {
   grid-area: footer;
@@ -150,7 +151,7 @@ main {
 }
 .topDisplay-container {
   max-width: 100%;
-  background: #74f3ff82;
+  /* background: #74f3ff82; */
   /* text-align: center;
   justify-content: center; */
   /* margin-top: 20px; */
@@ -159,12 +160,20 @@ main {
 .links-container {
   text-align: center;
 }
-
+div ul li a {
+  list-style-type: none;
+  display: inline;
+  font-family: 'Overlock', sans-serif;
+  font-weight: 100;
+  font-size: 1.5em;
+  color: aqua;
+  text-align: center;
+}
 .pitch-container {
   /* width: 500px;
   height: 700px; */
   margin-top: 30px;
-  padding: 10px;
+  padding: 30px;
   text-align: center;
   border: #8503ff;
   border-style: solid;

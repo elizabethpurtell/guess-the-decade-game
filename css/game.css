@@ -117,18 +117,23 @@ main {
 #topRowGame {
   grid-area: top;
 }
+
 #quiz {
   grid-area: main2;
 }
+
 #answers {
   grid-area: main5;
 }
+
 #result {
   grid-area: main3;
 }
+
 footer {
   grid-area: footer;
 }
+
 .grid-container {
   display: grid;
   grid-template-areas: 'header header header header header header' 'top top top top top top' 'main1 main1 main1 main1 main1 main1' 'main2 main2 main2 main2 main2 main2' 'main5 main5 main5 main5 main5 main5' 'main3 main3 main3 main3 main3 main3' 'footer footer footer footer footer footer';
@@ -198,6 +203,7 @@ footer {
   margin: 50px;
   box-shadow: 0 0 40px rgba(255, 0, 238, 0.982);
 }
+
 #quiz {
   width: 950px;
   height: 500px;
@@ -207,16 +213,16 @@ footer {
   align-items: center;
 }
 
-#question h2 {
-  position: relative;
-  width: 600px;
-  height: 300px;
+#question {
+  /* position: relative; */
+  /* width: 600px;
+  height: 100px; */
   font-family: 'Orbitron', sans-serif;
   font-weight: 300;
   font-size: 2em;
   color: rgb(252, 1, 239);
   justify-content: center;
-  margin-bottom: 20px;
+  margin: 20px;
 }
 
 
@@ -230,6 +236,7 @@ footer {
   justify-content: center;
   /* align-items: center; */
 }
+
 .answer-img {
   /* display:; */
   width: 250px;
@@ -254,6 +261,7 @@ footer {
   /* margin-top: 30px;
   margin-bottom: 30px; */
 }
+
 #nextButton {
   font-family: 'Orbitron', sans-serif;
   text-transform: uppercase;
@@ -271,6 +279,7 @@ footer {
   margin: 50px;
   box-shadow: 0 0 10px rgba(43, 252, 1, 0.982);
 }
+
 #message {
   font-family: 'Orbitron', sans-serif;
   font-weight: 300;
@@ -278,6 +287,7 @@ footer {
   color: rgb(2, 247, 198);
   text-align: center;
 }
+
 /* footer */
 footer {
   display: grid;
