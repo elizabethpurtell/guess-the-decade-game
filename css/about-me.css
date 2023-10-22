@@ -1,16 +1,6 @@
 body {
-  background: rgb(0, 0, 0);
-}
-
-header {
-  max-width: 100%;
-  height: 80px;
-  overflow: hidden;
-  margin: auto;
-  margin-bottom: 30px;
-  background-color: #30015c;
-  text-align: center;
-  justify-content: center;
+  background: rgb(0,0,0);
+background: linear-gradient(0deg, rgba(0,0,0,0.029871323529411797) 0%, rgba(28,240,196,0.9962578781512605) 50%, rgba(0,0,0,1) 100%);
 }
 
 /* Text */
@@ -19,7 +9,7 @@ h1 {
   font-weight: 900;
   color: rgb(34, 255, 0);
   text-transform: uppercase;
-  font-size: 5em;
+  font-size: 4em;
   text-align: center;
   margin-bottom: 10px;
 }
@@ -62,16 +52,15 @@ h5 {
 p {
   font-family: 'Overlock', sans-serif;
   font-weight: 100;
-  font-size: 1.25em;
+  font-size: 1.5em;
   color: white;
-  text-align: left;
+  text-align: center;
   margin-bottom: 5px;
 }
 
 /* top navigation */
 
 .topNav {
-  display: flex;
   padding: 15px;
   justify-content: space-around;
   align-items: center;
@@ -145,39 +134,51 @@ main {
   margin: 50px;
   margin-top: 30px;
   padding-bottom: 50px;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
 }
+
+
+header {
+  max-width: 100%;
+  height: 80px;
+  overflow: hidden;
+  margin: auto;
+  margin-bottom: 30px;
+  background-color: #30015c;
+  text-align: center;
+  justify-content: center;
+}
+
 .topDisplay-container {
   max-width: 100%;
-  /* background: #74f3ff82; */
-  /* text-align: center;
-  justify-content: center; */
-  /* margin-top: 20px; */
 }
 
 .links-container {
   text-align: center;
 }
-div ul li a {
+
+div ul {
   list-style-type: none;
+}
+
+div ul li {
   display: inline;
+}
+
+div ul li a {
   font-family: 'Overlock', sans-serif;
   font-weight: 100;
   font-size: 1.5em;
+  text-decoration: none;
+  padding: 20px;
   color: aqua;
   text-align: center;
 }
 .pitch-container {
-  /* width: 500px;
-  height: 700px; */
-  margin-top: 30px;
-  padding: 30px;
+  padding: 20px;
   text-align: center;
-  border: #8503ff;
-  border-style: solid;
-  border-width: 2px;
 }
 
 /* footer */
@@ -189,5 +190,4 @@ footer {
 .footer-container {
   text-align: center;
   justify-content: center;
-  margin: 20px;
 }

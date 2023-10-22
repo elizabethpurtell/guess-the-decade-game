@@ -23,12 +23,12 @@
 // input.addEventListener('change', (evt)=> changeBackgroundColor(evt.currentTarget.value));
 
 
-
 document.addEventListener('DOMContentLoaded', function () {
-  // Retrieve player data from localStorage
-  const playerData = JSON.parse(localStorage.getItem('playerData'));
+  if (typeof localStorage !== 'undefined') {
+    // Retrieve player data from localStorage
+    const playerData = JSON.parse(localStorage.getItem('playerData'));
 
-  if (playerData) {
+    if (playerData) {
       const playerName = playerData.name;
       const playerScore = playerData.score;
       const rank = playerData.rank;
@@ -54,6 +54,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Append the row to the table body
       scoreTableBody.appendChild(newRow);
-      // newRow.appendChild(scoreTableBody);
+    }
   }
 });
