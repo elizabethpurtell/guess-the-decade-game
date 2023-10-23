@@ -21,8 +21,6 @@ h1 {
   color: rgb(34, 255, 0);
   text-transform: uppercase;
   font-size: 3em;
-  text-align: center;
-  /* margin-bottom: 10px; */
 }
 
 h2 {
@@ -30,8 +28,6 @@ h2 {
   font-weight: 500;
   font-size: 2em;
   text-align: center;
-  /* margin-top: 100px;
-  margin-bottom: 40px; */
 }
 
 h3 {
@@ -39,16 +35,15 @@ h3 {
   font-weight: 300;
   font-size: 1.5em;
   text-align: center;
-  /* margin-bottom: 20px; */
 }
 
 h4 {
   font-family: 'Orbitron', sans-serif;
-  font-weight: 500;
-  font-size: 3em;
-  color: #ffffff;
+  font-weight: 900;
+  font-size: 5em;
+  color: #00ffdd;
+  text-shadow: 0 0 30px rgba(0, 255, 179, 0.982);
   text-align: center;
-  /* margin-bottom: 10px; */
 }
 
 h5 {
@@ -99,21 +94,17 @@ p {
 }
 
 .topNav .active {
-  padding: 20px;
+  margin: 20px;
   color: #000000;
-  background-color: rgb(34, 255, 0);
+  background-color: rgba(0, 255, 179, 0.8);
 }
 
 /* main  */
 
 main {
-  /* display: grid; */
   justify-content: center;
 }
 
-/* .topDisplay {
-  grid-area: top;
-} */
 #topRowGame {
   grid-area: top;
 }
@@ -137,56 +128,40 @@ footer {
 .grid-container {
   display: grid;
   grid-template-areas: 'header header header header header header' 'top top top top top top' 'main1 main1 main1 main1 main1 main1' 'main2 main2 main2 main2 main2 main2' 'main5 main5 main5 main5 main5 main5' 'main3 main3 main3 main3 main3 main3' 'footer footer footer footer footer footer';
-  /* grid-gap: 220px;
-  row-gap: 80px; */
+  row-gap: 5%;
   column-gap: 0px;
-  margin: 30px;
-  margin-top: 30px;
-  padding-bottom: 50px;
+  padding-top: 5%;
+  padding-bottom: 5%;
   background-color: rgb(0, 0, 0);
   justify-content: center;
   align-items: center;
 }
 
 /* section */
-
-/* .topDisplay {
-  background: #30015c;
-  text-align: center;
-  justify-content: center;
-  margin-top: 20px;
-} */
-
-.game-container {
-  /* position: relative; */
-  /* display: block; */
-}
-
 #start {
-  position: relative;
   display: grid;
+  margin-top: 40px;
   justify-content: center;
   align-items: center;
 }
 
 #playerName {
-  position: absolute;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
   height: 50px;
   width: 300px;
   color: #000000;
-  font-size: 16px;
-  text-align: center;
-  border-width: 8px;
+  border-width: 2px;
   border-style: solid;
-  border-color: #ff00d9;
+  border-color: #00ff1a;
   background: #26ff00;
-  box-shadow: 0 0 10px rgba(255, 0, 238, 0.982);
-  justify-content: center;
-  align-items: center;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.982);
 }
 
 #startButton {
-  position: relative;
   font-family: 'Orbitron', sans-serif;
   text-transform: uppercase;
   text-align: center;
@@ -197,97 +172,86 @@ footer {
   border-style: solid;
   background: #000000;
   border-image: linear-gradient(to top, rgb(34, 255, 0), rgb(252, 1, 239)) 1;
-  width: 200px;
+  width: 300px;
   cursor: pointer;
-  padding: 10px;
-  margin: 50px;
+  padding: 15px;
+  margin-top: 50px;
   box-shadow: 0 0 40px rgba(255, 0, 238, 0.982);
 }
 
 #quiz {
   width: 950px;
   height: 500px;
-  border: #53ff03;
-  border-style: solid;
   justify-content: center;
-  align-items: center;
 }
 
 #question {
-  /* position: relative; */
-  /* width: 600px;
-  height: 100px; */
   font-family: 'Orbitron', sans-serif;
   font-weight: 300;
   font-size: 2em;
   color: rgb(252, 1, 239);
   justify-content: center;
-  margin: 20px;
+  margin-top: 50px;
+  margin-bottom: 40px;
 }
 
 
 #answers {
-  /* width: 950px; */
-  /* height: 300px; */
-  /* margin: 30px; */
-  /* border: #03f2ff;
-  border-style: solid; */
-  justify-content: space-around;
-  justify-content: center;
-  /* align-items: center; */
+  display: block;
+  margin-top: 40px;
 }
 
 .answer-img {
-  /* display:; */
   width: 250px;
   height: 250px;
   cursor: pointer;
-  /* padding: 10px; */
-  box-shadow: 0 0 20px rgba(255, 0, 238, 0.982);
-  margin: 10px;
-  /* align-items: center; */
+  box-shadow: 0 0 30px rgba(255, 0, 238, 0.982);
+  margin: 3%;
 }
 
 #result {
-  width: 950px;
   height: 200px;
-  /* padding: 20px; */
   text-align: center;
-  border: #8503ff;
-  border-style: solid;
   border-image: linear-gradient(to top, rgb(34, 255, 0), rgb(2, 247, 198)) 1;
-  justify-content: center;
-  align-items: center;
-  /* margin-top: 30px;
-  margin-bottom: 30px; */
+  margin: 2%;
 }
 
 #nextButton {
   font-family: 'Orbitron', sans-serif;
   text-transform: uppercase;
   text-align: center;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 500;
   color: rgb(2, 247, 198);
   border-width: 8px;
   border-style: solid;
-  background: #000000;
+  background: black;
   border-image: linear-gradient(to bottom, rgb(2, 247, 198), rgb(43, 252, 1)) 1;
   width: 200px;
   cursor: pointer;
   padding: 10px;
-  margin: 50px;
-  box-shadow: 0 0 10px rgba(43, 252, 1, 0.982);
+  margin: 20px;
+  box-shadow: 0 0 20px rgba(43, 252, 1, 0.982);
 }
 
 #message {
   font-family: 'Orbitron', sans-serif;
-  font-weight: 300;
-  font-size: 1.5em;
-  color: rgb(2, 247, 198);
+  font-weight: 500;
+  font-size: 2em;
+  color: rgb(34, 255, 0);
   text-align: center;
 }
 
+popupWindow {
+  width: 400px;
+  height: 400px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 500;
+  font-size: 2em;
+  color: rgb(34, 255, 0);
+  text-align: center;
+  background-color: #30015c;
+}
 /* footer */
 footer {
   display: grid;
@@ -295,6 +259,7 @@ footer {
   background-color: #30015c;
   text-align: center;
   justify-content: center;
+  margin-top: 10%;
 }
 
 /* .footer-container {

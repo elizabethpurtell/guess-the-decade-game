@@ -6,11 +6,15 @@
 let currentQuestion = -1;
 let score = 0;
 let playerName = '';
-let players = [];
 let questions = [];
 
 
 // *** DOM Windows ***
+
+// Initialize the players array
+let players = JSON.parse(localStorage.getItem('players')) || [];
+
+
 
 const playerNameElement = document.getElementById('playerName');
 const startButton = document.getElementById('startButton');
@@ -21,7 +25,6 @@ const answerElements = [];
 for (let i = 1; i < 3; i++) {
   answerElements.push(document.getElementById(`answer${i}`));
 }
-// const answerElements = [document.getElementById('answer1'), document.getElementById('answer2'), document.getElementById('answer3')];
 const resultElement = document.getElementById('result');
 const messageElement = document.getElementById('message');
 const nextButton = document.getElementById('nextButton');
@@ -40,26 +43,9 @@ function QuizQuestion(question, correctAnswer) {
 
 // *** Event Listener ***
 
-// document.addEventListener('DOMContentLoaded', function () {
-//   const startButton = document.getElementById('startButton');
-
-//   startButton.addEventListener('click', function () {
-//     const playerNameElement = document.getElementById('playerName');
-//     const playerName = playerNameElement.value;
-
-//     if (playerName.trim() === '') {
-//       alert('Enter a name to play the game');
-//     } else {
-//       // const quiz = new QuizGame(playerName); 
-//       // Create a new instance of QuizGame for the player
-//       quiz.startGame();
-//     }
-//   });
-// });
-
-
 // *** Helper Functions / Utilities ***
 // to start the game, the player needs to give their name, it will be used in the end for displaying score on popup, then is ported over to the home.html scoreboard via localStorage use on the home.js file. Player can then see score along with other players scores.
+
 function startGame() {
   currentQuestion = 0;
   playerName = playerNameElement.value;
@@ -94,10 +80,8 @@ function checkAnswer(selectedAnswer) {
   if (selectedAnswer === correctAnswer) {
     score++;
     messageElement.textContent = 'Nailed it! Your music knowledge is on point!';
-    // nextQuestion();
   } else {
     messageElement.textContent = 'Not quite, but you\'re still a rockstar in our hearts!';
-    // nextQuestion();
   }
   resultElement.style.display = 'block';
   resultElement.disabled = false;
@@ -126,7 +110,7 @@ function showScore() {
   };
 
   players.push(playerData);
-  localStorage.setItem('players', JSON.stringify(players));
+  localStorage.setItem('playerData', JSON.stringify(playerData));
 
   const popupWindow = window.open('', '_blank', 'width=400,height=200');
   popupWindow.document.write(
@@ -173,7 +157,7 @@ questions.push(q1, q2, q3, q4, q5, q6, q7, q8, q9, q10);
 
 // Set up the initial click event for the startButton
 startButton.onclick = startGame;
-// QuizQuestion();
+
 
 // *** LOCAL STORAGE CONTINUES HERE ***
 

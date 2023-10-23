@@ -109,25 +109,8 @@ p {
 /* main  */
 
 main {
-  /* display: grid; */
   justify-content: center;
 }
-
-/* main .grid-container {
-  display: grid;
-  grid-template-columns: 150px 200px 200px 200px 150px;
-  grid-template-rows: 100px 100px 200px 200px 50px;
-  grid-gap: 0px;
-  row-gap: 10px;
-  column-gap: 0px;
-  max-width: 900px;;
-  margin: 30px;
-  margin-top: 30px;
-  padding-bottom: 50px;
-  background-color: rgb(0, 0, 0);
-  justify-content: center;
-  align-items: center;
-} */
 
 .topNav {
   grid-area: header;
@@ -139,9 +122,7 @@ main {
 .changeBkgrndColor {
   grid-area: right;
 }
-/* .score-container {
-  grid-area: (main1 main2 main3);
-} */
+
 .logoImg {
   grid-area: left;
 }
@@ -175,38 +156,10 @@ main {
   align-items: center;
 }
 
-/* .grid-container > div {
-  background-color: #eee;
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
-} */
-
 input #changeBkgrndColor {
   color: white;
-  /* width: 300px;
-  height: 30px; */
   border-style: solid;
 }
-
-/* section */
-
-/* section .topDisplay-container {
-  /* display: grid; */
-  /* background: #30015c;
-  text-align: center;
-  justify-content: center;
-  margin-top: 20px; */
-/* } */ 
-
-/* section .topDisplay-container {
-  width: 60px;
-  height: 60px;
-  border: #8503ff;
-  border-style: solid;
-  border-width: 2px;
-} */
-
 
 .playBtn {
   text-align: center;
@@ -235,13 +188,8 @@ button {
 
 /* table */
 .score-container {
-  /* grid-column: 1 / span 5;
-  grid-row-start: 3;
-  grid-row-end: 5; */
   padding: 20px;
   text-align: center;
-  border: #8503ff;
-  border-style: solid;
   border-image: linear-gradient(to top, rgb(34, 255, 0), darkorchid, hotpink) 1;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -249,8 +197,6 @@ button {
 
 
 #scoreboard {
-  /* grid-column: 1 / span 5;
-  grid-row: 2; */
   font-family: 'Orbitron', sans-serif;
   font-style: bold;
   font-size: 60px;
@@ -260,11 +206,7 @@ button {
   text-shadow: 0 0 30px rgb(68, 255, 0, 0.8);
 }
 
-
 .scoreTable {
-  /* grid-column: 1 / span 5;
-  grid-row-start: 3;
-  grid-row-end: 5; */
   border-collapse: collapse;
   width: 80%;
   color: black;
