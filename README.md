@@ -1,4 +1,4 @@
-# guess-the-decade-game
+# Final Project - Code 201 - self-paced
 
 ## The name of the project
 
